@@ -1,0 +1,10 @@
+services: 
+  ros_app: 
+    build: . 
+    container_name: rosbag_pickler 
+    volumes: 
+      - ./src:/app 
+      - ./bags:/app/bags
+      - ./pickles:/app/pickles
+
+    command: ["tail", "-f", "/dev/null"]
